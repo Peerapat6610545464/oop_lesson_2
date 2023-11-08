@@ -127,6 +127,16 @@ print("average number of passes made by forwards",
       my_table3.filter(lambda x: x['position'] == "forward").aggregate(lambda x: sum(x) / len(x), 'passes'))
 print("average number of passes made by midfielders",
       my_table3.filter(lambda x: x['position'] == "midfielder").aggregate(lambda x: sum(x) / len(x), 'passes'))
+print("average fare paid by passengers in the first class",
+      my_table5.filter(lambda x: x['class'] == "1").aggregate(lambda x: sum(x) / len(x), 'fare'))
+print("average fare paid by passengers in the third class",
+      my_table5.filter(lambda x: x['class'] == "3").aggregate(lambda x: sum(x) / len(x), 'fare'))
+male_sur = my_table5.filter(lambda x: x['gender'] == "M" and x['survived'] == "yes")
+print("The survival rate of male",
+      (len(male_sur.table) / len(my_table5.filter(lambda x: x['gender'] == "M").table)) * 100)
+female_sur = my_table5.filter(lambda x: x['gender'] == "M" and x['survived'] == "yes")
+print("The survival rate of female",
+      (len(female_sur.table) / len(my_table5.filter(lambda x: x['gender'] == "F").table)) * 100)
 
 # print("Test filter: only filtering out cities in Italy")
 # my_table1_filtered = my_table1.filter(lambda x: x['country'] == 'Italy')
