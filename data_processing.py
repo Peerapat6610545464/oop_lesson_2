@@ -132,7 +132,7 @@ print("average fare paid by passengers in the first class",
 print("average fare paid by passengers in the third class",
       my_table5.filter(lambda x: x['class'] == "3").aggregate(lambda x: sum(x) / len(x), 'fare'))
 male_sur = my_table5.filter(lambda x: x['gender'] == "M" and x['survived'] == "yes")
-print("The survival rate of male",
+print("The survival rate of  male",
       (len(male_sur.table) / len(my_table5.filter(lambda x: x['gender'] == "M").table)) * 100)
 female_sur = my_table5.filter(lambda x: x['gender'] == "M" and x['survived'] == "yes")
 print("The survival rate of female",
