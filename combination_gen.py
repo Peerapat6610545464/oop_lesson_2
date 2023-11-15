@@ -1,4 +1,6 @@
 import copy
+
+
 def gen_comb_list(list_set):
     '''
         Parameters:
@@ -26,3 +28,8 @@ def gen_comb_list(list_set):
             start_list.append(temp_item)
     return start_list
 
+
+print("Test gen_comb_list")
+x = [[1, 2, 3], [4, 5], [6, 7, 8]]
+comb_list = gen_comb_list(x)
+print(comb_list)

@@ -137,7 +137,9 @@ print("The survival rate of male",
 female_sur = my_table5.filter(lambda x: x['gender'] == "M" and x['survived'] == "yes")
 print("The survival rate of female",
       (len(female_sur.table) / len(my_table5.filter(lambda x: x['gender'] == "F").table)) * 100)
-
+male_southampton = my_table5.filter(lambda x: x['gender'] == "M" and x['embarked'] == "Southampton")
+print("total number of male passengers embarked at Southampton",
+      len(male_southampton.table))
 # print("Test filter: only filtering out cities in Italy")
 # my_table1_filtered = my_table1.filter(lambda x: x['country'] == 'Italy')
 # print(my_table1_filtered)
